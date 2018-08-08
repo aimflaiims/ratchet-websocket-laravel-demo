@@ -43,7 +43,7 @@ class WebSocketController implements MessageComponentInterface
      * @return [JSON]                    [description]
      * @example subscribe                conn.send(JSON.stringify({command: "subscribe", channel: "global"}));
      * @example groupchat                conn.send(JSON.stringify({command: "groupchat", message: "hello glob", channel: "global"}));
-     * @example message                  conn.send(JSON.stringify({command: "message", to: "1", message: "it needs xss protection"}));
+     * @example message                  conn.send(JSON.stringify({command: "message", to: "1", from: "9", message: "it needs xss protection"}));
      * @example register                 conn.send(JSON.stringify({command: "register", userId: 9}));
      */
     public function onMessage(ConnectionInterface $conn, $msg)

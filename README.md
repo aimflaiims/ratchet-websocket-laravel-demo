@@ -68,5 +68,5 @@ https://medium.com/@rohitdhiman_50304/real-time-one-to-one-and-group-chat-with-p
 ## Sending Message to Channel
     conn.send(JSON.stringify({command: "groupchat", message: "hello glob", channel: "global"}));
 
-##Closing Connection
+## Closing Connection
     conn.close();

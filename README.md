@@ -1,27 +1,14 @@
 # ratchet-websocket-laravel-demo
-
+For Demo read this post
+https://medium.com/@rohitdhiman_50304/real-time-one-to-one-and-group-chat-with-php-laravel-ratchet-websocket-library-javascript-and-c64ba20621ed
 ## Real Time One-to-One and Group Chat with PHP Laravel, Ratchet WebSocket Library and JavaScript.
     In this topic you will be implementing real time chat web socket in PHP using Laravel framework although with little bit changes you will be able to set it up on any PHP framework.
     Getting Ratchet
     First we need to include Ratchet into our Laravel project using composer by running the following command on your server at the project's root directory
     composer require cboden/ratchet
     And after it gets installed we can go on with creating websocket server script, which will be running in background waiting for and managing connections.
-## Setting up WebSocket Server with artisan
-    The websocket server is a background job that is kept running for managing connections between connecting peers.
-    php artisan make:command WebSocketServer --command=websocket:init
-    Once you run the command above you'll find a new php class created for you in "/app/Console/Commands/WebSocketServer.php", on Laravel 5.6 and above you'll need to write the following code snippet in the "handle" method of that class, in older Laravel versions the same code should be written in the "fire" method of the class.
 
-    and for secure server with ssl 
-    php artisan make:command WebSocketSecureServer --command=websocketsecu
-    re:init
-    "/app/Console/Commands/WebSocketSecureServer.php" 
-
-## OR Setting up WebSocket Server without artisan
-    Create a websocketserver.php file on root folder as:
-
-    And for secure server create a websocketsecureserver.php file on root folder as:
-
-## Developing the WebSocket Controller
+## The WebSocket Controller
     Here we'll develop the class that will do the work for the connected parties, it is a standard Laravel controller so that we can use any of the installed packages and services to be provided to the connected peers, in the directory "/app/Http/Controllers" create the file "WebSocketController.php" and copy the following code in it.
 
     That's it the server script is ready to be run and receive connections, but let's review that controller code, mainly the controller implements the Ratchet interfaces that is used on four states that a connected peer gets through and, it includes a variable that has the connected peers saved. the four states that any of the connecting peers go through that are expressed by the callback methods defined in the controller class above.
